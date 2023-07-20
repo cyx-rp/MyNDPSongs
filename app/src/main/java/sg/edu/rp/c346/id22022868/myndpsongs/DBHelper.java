@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class DBHelper extends SQLiteOpenHelper {
 
     //Increases by 1 when db schema changes
-    private static final int DATABASE_VER = 1;
+    private static final int DATABASE_VER = 3;
 
     //Defines filename of the database
     private static final String DATABASE_NAME = "songs.db";

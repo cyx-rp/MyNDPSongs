@@ -110,7 +110,7 @@ public class ListViewActivity extends AppCompatActivity {
             }
         });
 
-        spinnerYear.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        /*spinnerYear.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
@@ -120,7 +120,7 @@ public class ListViewActivity extends AppCompatActivity {
 
 
 
-                /*switch (position) {
+                *//*switch (position) {
                     case 0:
 
                         songs.addAll(db.getSongDetails());
@@ -128,14 +128,14 @@ public class ListViewActivity extends AppCompatActivity {
 
                     case 1:
                         songs.clear();
-                }*/
+                }*//*
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
-        });
+        });*/
 
 
 

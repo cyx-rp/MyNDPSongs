@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     String title;
     String singers;
     int year;
+    String yearCheck;
     int stars;
     ArrayList<Song> Songs;
     ArrayAdapter adapter;
@@ -56,28 +57,29 @@ public class MainActivity extends AppCompatActivity {
                 //Converting inputs to string
                 title = etTitle.getText().toString();
                 singers = etSingers.getText().toString();
-                year = Integer.parseInt(etYear.getText().toString());
+                yearCheck = etYear.getText().toString();
+                //condition to prevent nullpointerexception
+                if (!yearCheck.isEmpty()) {
+                    year = Integer.parseInt(yearCheck);
+                }
 
                 //if else statement to get ID of button selected so that we can assign value to that button
                 if (rgStars.getCheckedRadioButtonId() == R.id.radioButton) {
                     stars = 1;
-                }
-                else if (rgStars.getCheckedRadioButtonId() == R.id.radioButton2) {
+                } else if (rgStars.getCheckedRadioButtonId() == R.id.radioButton2) {
                     stars = 2;
-                }
-                else if (rgStars.getCheckedRadioButtonId() == R.id.radioButton3) {
+                } else if (rgStars.getCheckedRadioButtonId() == R.id.radioButton3) {
                     stars = 3;
-                }
-                else if (rgStars.getCheckedRadioButtonId() == R.id.radioButton4) {
+                } else if (rgStars.getCheckedRadioButtonId() == R.id.radioButton4) {
                     stars = 4;
-                }
-                else {
+                } else {
                     stars = 5;
                 }
 
-
-                //Insert a task
-                db.insertSong(title, singers, year, stars);
+                if (!title.isEmpty() && !singers.isEmpty() && !yearCheck.isEmpty()) {
+                    //Insert a task
+                    db.insertSong(title, singers, year, stars);
+                }
 
             }
         });
